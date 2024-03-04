@@ -1,0 +1,51 @@
+//naive approach
+#include <iostream>
+using namespace std;
+int main()
+{
+    int arr[]={13,15,12,14,16,8,6,4,10,30};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    for(int i=0;i<n;i++ ){
+        int span=1;
+        for(int j=i-1;j>=0&& arr[j]<=arr[i];j-- ){
+            span++;
+        }
+        cout<<"for "<<arr[i]<<"span : "<<span<<endl;
+    }
+
+    return 0;
+}
+// effecient solution: span=(index of current element)-(index of closest greater element)<------ if closest greater exist------->
+//otherwise span=index of current element+1
+#include <iostream>
+#include<stack>
+using namespace std;
+
+int main()
+{
+    int arr[]={13,15,12,14,16,8,6,4,10,30};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    stack<int> s;
+    s.push(0);
+    int span=1;
+    cout<<"1"<<endl;
+    for(int i=1;i<n;i++){
+        while(s.empty()==false && arr[i]>=arr[s.top()]){
+            s.pop();
+        }
+        span=s.empty()? i+1:i-s.top();
+        cout<<span<<endl;
+        s.push(i);
+    }
+    return 0;
+}
+//Output:1
+2
+1
+2
+5
+1
+1
+1
+4
+10
