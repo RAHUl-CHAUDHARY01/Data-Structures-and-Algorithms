@@ -1,4 +1,4 @@
-//naive approach
+//naive approach 1
 #include <iostream>
 using namespace std;
 int main()
