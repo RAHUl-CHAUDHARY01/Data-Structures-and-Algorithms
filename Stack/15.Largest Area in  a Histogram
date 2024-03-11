@@ -10,7 +10,7 @@ int main()
         int max=arr[i];
         for(int j=i-1;j>=0;j--){
             if(arr[j]>=arr[i])
-            max+=arr[i];
+            max+=arr[i]; 
             else
             break;
         }
