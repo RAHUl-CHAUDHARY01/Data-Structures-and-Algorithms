@@ -4,7 +4,7 @@
 #include <iostream>
 using namespace std;
 vector<int> previouselement(vector<int> arr,int n){
-    stack<int> s;
+    stack<int> s; 
     s.push(-1);
     vector<int> ans(n); // Initializing the size of ans
     cout<<"elements pf prev:";
